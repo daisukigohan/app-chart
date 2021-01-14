@@ -6,9 +6,8 @@ const os = require('os');
 router.get('/', (req, res, next) => {
   console.log("Hello");
   // Google Chart API へ引き渡すデータ
-  let data = '{"result":true, "count":42}';
-  console.log(typeof data);
-  console.log({ loadavg: os.loadavg() });
+  let data = [100, -50, 200, 150, 200, 400, 1000];
+
   //return res.json(data);
   res.json(data);
 });

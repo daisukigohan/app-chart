@@ -99,13 +99,23 @@ __webpack_require__.r(__webpack_exports__);
 
 var global = Function('return this;')();
 global.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
-
-var chartbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#chartbox'); // Getg
+ // Getg
 
 var chartViewButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#chart-button');
 chartViewButton.click(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default.a.get('/chart', {}, function (data) {
-    chartbox.text(data);
+    var ctx = document.getElementById("chartbox_canvas");
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2019/09', '2019/10', '2019/11', '2019/12', '2020/1', '2020/2', '2020/3'],
+        datasets: [{
+          label: 'グラフ',
+          backgroundColor: '#20B2AA',
+          data: data
+        }]
+      }
+    });
   });
 });
 
