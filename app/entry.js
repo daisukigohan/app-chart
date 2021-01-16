@@ -14,7 +14,7 @@ chartViewButton.click(() => {
 
     var ctx = document.getElementById("chartbox_canvas");
     new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
  
     data: {
         labels:['2019/09', '2019/10', '2019/11', '2019/12', '2020/1', '2020/2','2020/3'],
@@ -25,6 +25,7 @@ chartViewButton.click(() => {
         }]
     }
   });
+  
 });
 });
 
